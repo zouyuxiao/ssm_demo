@@ -19,5 +19,7 @@
 <hr/>
 <a href="upload.jsp">上传</a><br/>
 <a href="showfile.jsp">下载</a>
+<hr/>
+<a href="email.jsp">邮箱验证</a><br/>
 </body>
 </html>

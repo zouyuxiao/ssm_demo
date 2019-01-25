@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.MailDao">
+    <insert id="insert" parameterType="Mail">
+        INSERT INTO user2(username, email, password, state, code) VALUES (#{username},#{password},#{email},#{state},#{code})
+    </insert>
+    <update id="update">
+        UPDATE user2 SET state=#{state}
+    </update>
+</mapper>

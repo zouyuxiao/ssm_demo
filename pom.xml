@@ -31,6 +31,12 @@
   </properties>
 
   <dependencies>
+    <!--mail jar-->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-email</artifactId>
+      <version>1.5</version>
+    </dependency>
     <!--上传-->
     <dependency>
       <groupId>commons-fileupload</groupId>
