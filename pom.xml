@@ -28,9 +28,17 @@
     <shiro.version>1.2.3</shiro.version>
     <ehcache.version>2.6.9</ehcache.version>
     <servlet-api.version>3.1.0</servlet-api.version>
+    <version>4.8.2</version>
   </properties>
 
   <dependencies>
+    <!-- https://mvnrepository.com/artifact/org.junit/com.springsource.org.junit -->
+    <dependency>
+      <groupId>org.junit</groupId>
+      <artifactId>com.springsource.org.junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+
     <!--mail jar-->
     <dependency>
       <groupId>org.apache.commons</groupId>
@@ -171,6 +179,11 @@
       <groupId>commons-dbcp</groupId>
       <artifactId>commons-dbcp</artifactId>
       <version>1.4</version>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>RELEASE</version>
     </dependency>
 
   </dependencies>

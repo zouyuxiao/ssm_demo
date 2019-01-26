@@ -1,14 +1,14 @@
 package com.service.impl;
 
 import com.bean.Mail;
-import com.bean.User;
+import com.bean.MailExample;
 import com.dao.MailDao;
 import com.service.MailService;
 import com.util.MailUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.swing.*;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -33,7 +33,21 @@ public class MailServiceImpl implements MailService {
 
     @Override
     public int update(Mail mail) {
-        mail.setState( 1 );
-        return mailDao.update( mail );
+        MailExample mailExample = new MailExample();
+        // 创建sql条件
+        mailExample.createCriteria().andEmailEqualTo( mail.getCode() );
+        // 通过条件查询用户信息
+        List<Mail> list = mailDao.selectByMailExample( mailExample );
+        Mail mail12 = null;
+        for (Mail mail1 : list){
+            mail1.setState( 1 );
+            mail12 = mail1;
+        }
+      return mailDao.updateByExample( mail,mailExample );
+    }
+
+    @Override
+    public List<Mail> findUsername(String username) {
+        return mailDao.findUsername( username );
     }
 }

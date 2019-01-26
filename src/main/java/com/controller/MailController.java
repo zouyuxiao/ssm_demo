@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 /**
  * Created by ${邹} on 2019/1/24.
  * 描述：
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class MailController {
     @Autowired
     MailService mailService;
+
     @RequestMapping(value = "register")
     @ResponseBody
 //    @RequestMapping(value = "register",produces = "text/plain;charset=utf-8")
@@ -27,5 +30,12 @@ public class MailController {
     public String activate(Mail mail){
         mailService.update( mail );
         return "../../index";
+    }
+
+    @RequestMapping("/findUsername")
+    @ResponseBody
+    public List<Mail> findUsername(String username){
+        List<Mail> mail = (List<Mail>) mailService.findUsername( username );
+        return mail;
     }
 }

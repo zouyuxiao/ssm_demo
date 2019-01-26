@@ -5,7 +5,7 @@ package com.bean;
  * 描述：邮箱验证
  */
 public class Mail {
-    private Integer uid;
+    private Integer id;
 
     private String username;
 
@@ -20,7 +20,7 @@ public class Mail {
     @Override
     public String toString() {
         return "Mail{" +
-                "uid=" + uid +
+                "id=" + id +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
@@ -29,12 +29,12 @@ public class Mail {
                 '}';
     }
 
-    public Integer getUid() {
-        return uid;
+    public Integer getId() {
+        return id;
     }
 
-    public void setUid(Integer uid) {
-        this.uid = uid;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getUsername() {
