@@ -35,15 +35,15 @@ public class MailServiceImpl implements MailService {
     public int update(Mail mail) {
         MailExample mailExample = new MailExample();
         // 创建sql条件
-        mailExample.createCriteria().andEmailEqualTo( mail.getCode() );
+        mailExample.createCriteria().andCodeEqualTo( mail.getCode() );
         // 通过条件查询用户信息
         List<Mail> list = mailDao.selectByMailExample( mailExample );
-        Mail mail12 = null;
+        Mail mail2 = null;
         for (Mail mail1 : list){
             mail1.setState( 1 );
-            mail12 = mail1;
+            mail2 = mail1;
         }
-      return mailDao.updateByExample( mail,mailExample );
+      return mailDao.updateByExample( mail2,mailExample );
     }
 
     @Override
